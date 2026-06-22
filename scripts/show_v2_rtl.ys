@@ -1,0 +1,20 @@
+#============================================================
+# TinyMAC v2 RTL Schematic Export Script
+# Description:
+#   Generates Yosys Graphviz .dot files for v2 RTL views.
+#============================================================
+
+read_verilog -sv rtl_v2/mac_unit_v2.sv
+read_verilog -sv rtl_v2/adder_tree_v2.sv
+read_verilog -sv rtl_v2/control_fsm_v2.sv
+read_verilog -sv rtl_v2/tinymac_top_v2.sv
+
+hierarchy -check -top tinymac_top_v2
+
+proc
+opt
+
+show -format dot -prefix images/mac_unit_v2_rtl mac_unit_v2
+show -format dot -prefix images/adder_tree_v2_rtl adder_tree_v2
+show -format dot -prefix images/control_fsm_v2_rtl control_fsm_v2
+show -format dot -prefix images/tinymac_top_v2_rtl tinymac_top_v2

@@ -1,0 +1,27 @@
+#============================================================
+# TinyMAC v2 Yosys Synthesis Script
+# Description:
+#   Generic synthesis flow for TinyMAC v2 pipelined RTL.
+#============================================================
+
+# Read SystemVerilog RTL files
+read_verilog -sv rtl_v2/mac_unit_v2.sv
+read_verilog -sv rtl_v2/adder_tree_v2.sv
+read_verilog -sv rtl_v2/control_fsm_v2.sv
+read_verilog -sv rtl_v2/tinymac_top_v2.sv
+
+# Set and check top module
+hierarchy -check -top tinymac_top_v2
+
+# Convert processes and optimize
+proc
+opt
+
+# Run generic synthesis
+synth -top tinymac_top_v2
+
+# Generate synthesis reports
+tee -o reports/synthesis_v2/tinymac_v2_stat.rpt stat
+
+# Write synthesized generic netlist
+write_verilog reports/synthesis_v2/tinymac_v2_synth.v

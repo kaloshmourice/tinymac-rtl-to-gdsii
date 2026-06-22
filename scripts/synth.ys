@@ -1,0 +1,27 @@
+#============================================================
+# TinyMAC Yosys Synthesis Script
+# Description:
+#   Initial generic synthesis flow for TinyMAC RTL.
+#============================================================
+
+# Read SystemVerilog RTL files
+read_verilog -sv rtl/mac_unit.sv
+read_verilog -sv rtl/adder_tree.sv
+read_verilog -sv rtl/control_fsm.sv
+read_verilog -sv rtl/tinymac_top.sv
+
+# Set and check top module
+hierarchy -check -top tinymac_top
+
+# Convert processes and optimize
+proc
+opt
+
+# Run generic synthesis
+synth -top tinymac_top
+
+# Generate synthesis reports
+tee -o reports/synthesis/tinymac_stat.rpt stat
+
+# Write synthesized generic netlist
+write_verilog reports/synthesis/tinymac_synth.v

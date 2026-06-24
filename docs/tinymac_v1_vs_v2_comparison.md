@@ -90,7 +90,7 @@ This is the measured register cost of pipelining.
 | Magic DRC errors | 0 | 0 | Clean |
 | LVS errors | 0 | 0 | Clean |
 | Antenna violating nets | 0 | 0 | Clean |
-| Total power | Not recorded in v1 summary | 0.004670 W | v2 recorded |
+| Total power | 0.007909 W | 0.004670 W | ~40.95% lower total power in v2 |
 
 ---
 

@@ -66,3 +66,15 @@ The successful OpenLane run generated the following final physical-design views:
 ## Notes
 
 An earlier 10 ns OpenLane run completed routing and passed DRC/LVS/Antenna, but failed setup timing in slow corners. The initial clean physical-design milestone therefore used a relaxed 25 ns clock period. This timing limitation motivated TinyMAC v2, which added pipeline registers and closed timing at 10.5 ns.
+
+
+## Power Summary
+
+| Metric | Value |
+|---|---:|
+| Total power | 0.007909 W |
+| Internal power | 0.003602 W |
+| Switching power | 0.004307 W |
+| Leakage power | 0.000000014568 W |
+
+Power was extracted from a clean v1 OpenLane rerun using the same v1 configuration.

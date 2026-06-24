@@ -37,7 +37,7 @@ Completed milestones:
 * Clean DRC, LVS, antenna, setup timing, and hold timing results
 * Final GDS/DEF/LEF/ODB/netlist view generation
 * Real RTL, gate-level, and layout images
-* v1 vs v2 timing, area, latency, and signoff comparison
+* v1 vs v2 timing, area, power, latency, and signoff comparison
 
 ## Design Overview
 
@@ -281,6 +281,7 @@ Both TinyMAC v1 and TinyMAC v2 completed the OpenLane/OpenROAD physical design f
 | Core area | 41758.8 um^2 |
 | Setup worst slack | +0.9228 ns |
 | Hold worst slack | +0.2664 ns |
+| Total power | 0.007909 W |
 | Route DRC errors | 0 |
 | Magic DRC errors | 0 |
 | Antenna violating nets | 0 |

@@ -449,3 +449,15 @@ The project now includes two complete ASIC implementations: a baseline single-cy
 ### Next Step
 
 Review the GitHub repository presentation as a complete portfolio project, then prepare a concise LinkedIn post and CV/interview summary.
+
+## Public Documentation Power Update
+
+After the public release, TinyMAC v1 power was extracted from a clean OpenLane rerun using the same v1 configuration.
+
+Recorded TinyMAC v1 power results:
+* Total power: 0.007909 W
+* Internal power: 0.003602 W
+* Switching power: 0.004307 W
+* Leakage power: 0.000000014568 W
+
+The README, v1 physical summary, and v1 vs v2 comparison document were updated so the project now includes a complete timing, area, power, latency, and signoff comparison between TinyMAC v1 and TinyMAC v2.
